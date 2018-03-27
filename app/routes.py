@@ -1,4 +1,9 @@
+from flask import render_template # comes with flask, it is a function
 from app import app
+
+# This function takes a template filename and a variable list of template
+# arguments and returns the same template, but with all the placeholders in it replaced with actual
+# values. It uses Jinja2 templating engine.
 
 @app.route("/")
 @app.route("/index")
@@ -6,15 +11,7 @@ def index():
     # mock user
     user = {"username" : "Neexiey"}
 
-    return '''
-<html>
-    <head>
-        <title>Home Page - Microblog</title>
-    </head>
-    <body>
-        <h1>Hello, ''' + user['username'] + '''!</h1>
-    </body>
-</html>''' # you can return HTML too!
+    return render_template('index.html', title='Home', user=user)
 
 # In Flask, handlers for the application routes are written as Python functions, called
 # view functions. View functions are mapped to one or more route URLs so that Flask knows
