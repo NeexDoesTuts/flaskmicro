@@ -11,7 +11,19 @@ def index():
     # mock user
     user = {"username" : "Neexiey"}
 
-    return render_template('index.html', title='Home', user=user)
+    # mock posts object
+    posts = [
+        {
+            'author': {'username': 'John'},
+            'body': 'Beautiful day in Portland!'
+        },
+        {
+            'author': {'username': 'Susan'},
+            'body': 'The Avengers movie was so cool!'
+        }
+    ]
+
+    return render_template('index.html', title='Home', user=user, posts=posts)
 
 # In Flask, handlers for the application routes are written as Python functions, called
 # view functions. View functions are mapped to one or more route URLs so that Flask knows
