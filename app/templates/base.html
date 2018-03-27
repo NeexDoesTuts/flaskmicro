@@ -1,0 +1,29 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+        <div>Microblog: <a href="/index">Home</a></div>
+        <hr>
+        {% block content %}
+        <!-- stuff gets here! -->
+        {% endblock %}
+    </body>
+</html>
+
+<!--all the {{ stuff }} are variables and will be known at runtime only-->
+
+<!-- Using loops in HTML with Jinja2
+
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog!</title>
+        {% endif %}
+
+If there is a title variable than use it, else use this other thing
+-->
