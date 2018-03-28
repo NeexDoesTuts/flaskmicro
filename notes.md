@@ -34,3 +34,12 @@ But don’t worry about this just yet.
 
 must do 
 export FLASK_APP=microblog.py
+
+One problem with writing links directly in templates and source files is that if one day you
+decide to reorganize your links, then you are going to have to search and replace these links in
+your entire application.
+
+To have better control over these links, Flask provides a function called url_for() , which
+generates URLs using its internal mapping of URLs to view functions. For example, the ex-
+pression url_for(’login’) returns /login , and url_for(’index’) return ’/index .
+The argument to url_for() is the endpoint name, which is the name of the view function.
