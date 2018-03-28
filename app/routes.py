@@ -1,5 +1,6 @@
 from flask import render_template # comes with flask, it is a function
 from app import app
+from app.forms import LoginForm
 
 # This function takes a template filename and a variable list of template
 # arguments and returns the same template, but with all the placeholders in it replaced with actual
@@ -25,6 +26,11 @@ def index():
 
     return render_template('index.html', title='Home', user=user, posts=posts)
 
+
+@app.route("/login")
+def login():
+    form = LoginForm()
+    return render_template("login.html", title="Sign In", form=form)
 # In Flask, handlers for the application routes are written as Python functions, called
 # view functions. View functions are mapped to one or more route URLs so that Flask knows
 # what logic to execute when a client requests a given URL.

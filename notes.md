@@ -31,3 +31,6 @@ The configuration settings are defined as class variables inside the Config
 class. As the application needs more configuration items, they can be added to this class, and later if I find that I need to have more than one configuration set, I can create subclasses of it.
 But don’t worry about this just yet.
 
+
+must do 
+export FLASK_APP=microblog.py
